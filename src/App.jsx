@@ -9,7 +9,7 @@ const S = {
 };
 const c={
   iv:"#FAF6F1",po:"#F3EDE6",bs:"#EDE5DB",ps:"#D9D2C9",mg:"#B5AFA8",
-  dw:"#2E2A26",wc:"#5A544D",ss:"#8A8279",
+  dw:"#2E2A26",wc:"#5A544D",ss:"#6B6560",
   co:"#D4917A",ro:"#C4929A",sg:"#9AAF9A",ap:"#DAA882",lg:"#A9A0B2",
 };
 const sf="'Instrument Serif',Georgia,serif";
@@ -53,8 +53,8 @@ function Tabs({act,nav}){
     [S.PROFILE]:S.PROFILE,[S.SETTINGS]:S.PROFILE,
   };
   const activeTab=tabFor[act]||act;
-  return(<div style={{position:"absolute",bottom:0,left:0,right:0,height:84,background:c.iv+"ee",backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderTop:"1px solid "+c.ps+"60",display:"flex",justifyContent:"space-around",alignItems:"flex-start",paddingTop:10,zIndex:30}}>
-    {t.map(x=>{const on=activeTab===x.id;return(<div key={x.id} onClick={()=>nav(x.id)} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:3,cursor:"pointer",padding:"4px 12px"}}><svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke={on?c.co:c.mg} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={x.d}/></svg><span style={{fontSize:10,fontWeight:500,color:on?c.co:c.mg}}>{x.l}</span></div>)})}
+  return(<div style={{position:"absolute",bottom:0,left:0,right:0,height:84,background:c.iv+"f0",backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderTop:"1px solid "+c.ps,display:"flex",justifyContent:"space-around",alignItems:"flex-start",paddingTop:10,zIndex:30}}>
+    {t.map(x=>{const on=activeTab===x.id;return(<div key={x.id} onClick={()=>nav(x.id)} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:3,cursor:"pointer",padding:"4px 12px"}}><svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke={on?c.co:"#8A8279"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={x.d}/></svg><span style={{fontSize:10,fontWeight:500,color:on?c.co:"#8A8279"}}>{x.l}</span></div>)})}
   </div>);
 }
 
@@ -151,7 +151,7 @@ function Ob5({nav}){return(
     <div style={{width:72,height:72,borderRadius:"50%",background:c.sg+"20",display:"flex",alignItems:"center",justifyContent:"center",fontSize:32,marginBottom:24}}>✦</div>
     <h1 style={{fontFamily:sf,fontSize:32,fontWeight:400,color:c.dw,marginBottom:8}}>You're all set, Mike</h1>
     <p style={{fontSize:15,color:c.ss,lineHeight:1.6,marginBottom:32,maxWidth:280}}>We'll use your vibe to find the right people and curate real-world moments for you.</p>
-    <div style={{background:"#F2EBE3",borderRadius:20,padding:"18px 20px",width:"100%",marginBottom:40,textAlign:"left"}}>
+    <div style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:20,padding:"18px 20px",width:"100%",marginBottom:40,textAlign:"left"}}>
       <p style={{fontSize:11,fontWeight:500,letterSpacing:"0.06em",textTransform:"uppercase",color:c.ss,marginBottom:10}}>Your snapshot</p>
       <p style={{fontSize:14,color:c.wc,lineHeight:1.7}}>📍 San Francisco · 25–34<br/>🧗 Bouldering, Deep conversation, Coffee walks<br/>💫 Just moved to a new city</p>
     </div>
@@ -241,14 +241,14 @@ function Home({nav,joined,matched,profDone}){
       <p style={{fontSize:14,color:c.ss,lineHeight:1.5}}>Your first circle is waiting.<br/>Check in to get matched.</p>
     </div>}
     {/* Upcoming circle — only after join */}
-    {joined&&<div onClick={()=>nav(S.DETAIL)} style={{background:"#F2EBE3",borderRadius:20,padding:"18px 20px",cursor:"pointer",marginBottom:16}}>
+    {joined&&<div onClick={()=>nav(S.DETAIL)} style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:20,padding:"18px 20px",cursor:"pointer",marginBottom:16}}>
       <p style={{fontSize:11,fontWeight:500,letterSpacing:"0.06em",textTransform:"uppercase",color:c.sg,marginBottom:10}}>Upcoming circle</p>
       <div style={{display:"flex",gap:12,alignItems:"center"}}>
         <span style={{fontSize:28}}>🏎️</span>
         <div><h3 style={{fontSize:16,fontWeight:600,color:c.dw,marginBottom:2}}>Go-Kart Grand Prix</h3><p style={{fontSize:12,color:c.ss}}>Tomorrow, 7 PM · Kartland SF</p></div>
       </div>
     </div>}
-    {joined&&<div style={{background:"#F2EBE3",borderRadius:16,padding:"14px 18px",display:"flex",alignItems:"center",gap:12}}>
+    {joined&&<div style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:16,padding:"14px 18px",display:"flex",alignItems:"center",gap:12}}>
       <span style={{fontSize:22}}>🔥</span><div><p style={{fontSize:14,fontWeight:600,color:c.dw}}>3-week streak</p><p style={{fontSize:12,color:c.ss}}>You've checked in 3 weeks in a row</p></div>
     </div>}
   </div>
@@ -321,7 +321,7 @@ function Voice({nav}){
           </div>
         </div>
         {ph===0&&<p style={{fontSize:13,color:c.ss}}><strong style={{fontWeight:500,color:c.wc}}>Tap to start</strong></p>}
-        {ph===1&&lw>0&&<div style={{background:"#F2EBE3",borderRadius:18,padding:"16px 18px",marginTop:8,textAlign:"left",width:"100%"}}>
+        {ph===1&&lw>0&&<div style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:18,padding:"16px 18px",marginTop:8,textAlign:"left",width:"100%"}}>
           <p style={{fontSize:10,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:c.ss,marginBottom:8}}>You</p>
           <p style={{fontSize:15,fontFamily:"inherit",color:c.dw,lineHeight:1.7}}>{liveWords.slice(0,lw).join(" ")}<span style={{opacity:.4}}>|</span></p>
         </div>}
@@ -356,7 +356,7 @@ function Voice({nav}){
             <svg width={48} height={48} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{opacity:.6}}><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
           </div>
           <div style={{display:"flex",gap:8,marginBottom:16,flexWrap:"wrap"}}>
-            {photoVibes.map((v,i)=><span key={i} style={{padding:"7px 14px",borderRadius:999,fontSize:12,fontWeight:600,background:[c.co,c.sg,c.ap][i%3]+"15",color:[c.co,c.sg,c.ap][i%3],border:"1.5px solid "+[c.co,c.sg,c.ap][i%3]+"30"}}>{v}</span>)}
+            {photoVibes.map((v,i)=><span key={i} style={{padding:"7px 14px",borderRadius:999,fontSize:12,fontWeight:600,background:[c.co,c.sg,c.ap][i%3]+"25",color:[c.co,c.sg,c.ap][i%3],border:"1.5px solid "+[c.co,c.sg,c.ap][i%3]+"40"}}>{v}</span>)}
           </div>
         </>}
         <div style={{marginTop:"auto"}}><Btn l="Find my circle" fn={()=>{setFuStep(0);setFuSel(null);setFuAnswers([]);setSimMissing(["mood","energy","activity","social","timing"].filter(()=>Math.random()<0.35));setPh(6)}} cl={photoUploaded?c.co:c.ps}/></div>
@@ -412,7 +412,7 @@ function Voice({nav}){
         </div>}
         {/* Current question */}
         {fuStep<cappedQs.length&&<>
-          <div style={{background:"#F2EBE3",borderRadius:18,padding:"14px 16px",marginBottom:16,marginLeft:52}}>
+          <div style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:18,padding:"14px 16px",marginBottom:16,marginLeft:52}}>
             <p style={{fontSize:15,color:c.dw,lineHeight:1.6,fontWeight:500}}><span style={{marginRight:8}}>{cappedQs[fuStep].icon}</span>{cappedQs[fuStep].q}</p>
           </div>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginLeft:52}}>
@@ -438,13 +438,13 @@ function Voice({nav}){
       <div style={{padding:"68px 0 12px"}}><Bk fn={()=>{setPh(0);setSec(0)}}/></div>
       <h2 style={{fontFamily:sf,fontSize:24,fontWeight:400,color:c.dw,marginBottom:20}}>Here's what we heard</h2>
       {/* Transcript card with inline play button */}
-      <div style={{background:"#F2EBE3",borderRadius:18,padding:"20px 18px",marginBottom:16,minHeight:100,position:"relative"}}>
+      <div style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:18,padding:"20px 18px",marginBottom:16,minHeight:100,position:"relative"}}>
         <div style={{position:"absolute",top:16,right:16,width:32,height:32,borderRadius:"50%",background:c.ro+"20",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}><svg width={14} height={14} viewBox="0 0 24 24" fill={c.ro}><path d="M8 5v14l11-7z"/></svg></div>
         <p style={{fontSize:15,color:c.dw,lineHeight:1.7,paddingRight:40}}>{words.map((w,i)=><span key={i} style={{opacity:i<=wi?1:.15,transition:"opacity .15s"}}>{w} </span>)}</p>
       </div>
       {/* Signal tags */}
       <div style={{display:"flex",gap:8,marginBottom:24,flexWrap:"wrap"}}>
-        {tags.map((t,i)=><span key={i} style={{padding:"7px 14px",borderRadius:999,fontSize:12,fontWeight:600,background:t.c+"15",color:t.c,border:"1.5px solid "+t.c+"30"}}>{t.l}</span>)}
+        {tags.map((t,i)=><span key={i} style={{padding:"7px 14px",borderRadius:999,fontSize:12,fontWeight:600,background:t.c+"25",color:t.c,border:"1.5px solid "+t.c+"40"}}>{t.l}</span>)}
       </div>
       <div style={{marginTop:"auto",display:"flex",flexDirection:"column",gap:10}}>
         <Btn l="Looks good — find my circle" fn={()=>{setFuStep(0);setFuSel(null);setFuAnswers([]);const all=["mood","energy","activity","social","timing"];const sh=[...all].sort(()=>Math.random()-.5);setSimMissing(["mood","energy","activity","social","timing"].filter(()=>Math.random()<0.35));setPh(6)}}/>
@@ -460,15 +460,15 @@ function Match({nav,onDone}){
   const msgs=["Reading your energy...","Finding emotionally aligned people...","Curating experiences for you..."];
   useEffect(()=>{const a=setTimeout(()=>setSt(1),2000);const b=setTimeout(()=>setSt(2),4000);const d=setTimeout(()=>{if(onDone)onDone();nav(S.JOURNEY)},6200);return()=>{clearTimeout(a);clearTimeout(b);clearTimeout(d)}},[]);
   return(
-    <div style={{height:"100%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",textAlign:"center",padding:"0 32px"}}>
+    <div style={{height:"100%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",textAlign:"center",padding:"0 32px",background:"#2E2A26"}}>
       <div style={{position:"relative",width:180,height:180,marginBottom:48}}>
-        <div style={{position:"absolute",inset:0,borderRadius:"50%",border:"1px solid "+c.ps+"40"}}/>
-        <div style={{position:"absolute",inset:-20,borderRadius:"50%",border:"1px solid "+c.ps+"25"}}/>
-        <div style={{position:"absolute",inset:-44,borderRadius:"50%",border:"1px solid "+c.ps+"15"}}/>
-        <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:24,height:24,borderRadius:"50%",background:c.co,animation:"p1 2s ease-in-out infinite",boxShadow:"0 0 20px "+c.co+"40"}}/>
+        <div style={{position:"absolute",inset:0,borderRadius:"50%",border:"1px solid "+c.co+"30"}}/>
+        <div style={{position:"absolute",inset:-20,borderRadius:"50%",border:"1px solid "+c.co+"20"}}/>
+        <div style={{position:"absolute",inset:-44,borderRadius:"50%",border:"1px solid "+c.co+"12"}}/>
+        <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:24,height:24,borderRadius:"50%",background:c.co,animation:"p1 2s ease-in-out infinite",boxShadow:"0 0 30px "+c.co+"60"}}/>
         {[0,1,2,3,4].map(i=><div key={i} style={{position:"absolute",top:"50%",left:"50%",width:10,height:10,borderRadius:"50%",background:[c.ro,c.sg,c.ap,c.lg,c.co][i],animation:`orb${i} ${3+i*.5}s linear infinite`,opacity:st>=Math.floor(i/2)?1:.2,transition:"opacity .5s"}}/>)}
       </div>
-      <p style={{fontFamily:sf,fontSize:22,fontStyle:"italic",fontWeight:400,color:c.dw,lineHeight:1.4}}>{msgs[st]}</p>
+      <p style={{fontFamily:sf,fontSize:22,fontStyle:"italic",fontWeight:400,color:"#F2EBE3",lineHeight:1.4}}>{msgs[st]}</p>
     </div>
   );
 }
@@ -631,9 +631,9 @@ function Profile({nav}){return(
     <div style={{marginBottom:24}}>
       <p style={{fontSize:11,fontWeight:500,letterSpacing:"0.08em",textTransform:"uppercase",color:c.ss,marginBottom:12}}>Your vibe</p>
       <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
-        <span style={{padding:"9px 16px",borderRadius:999,fontSize:13,fontWeight:500,background:c.ro+"15",color:c.ro}}>Usually curious</span>
-        <span style={{padding:"9px 16px",borderRadius:999,fontSize:13,fontWeight:500,background:c.sg+"15",color:"#6B8B6B"}}>Prefers evenings</span>
-        <span style={{padding:"9px 16px",borderRadius:999,fontSize:13,fontWeight:500,background:c.lg+"15",color:c.lg}}>Small groups</span>
+        <span style={{padding:"9px 16px",borderRadius:999,fontSize:13,fontWeight:500,background:c.ro+"25",color:c.ro}}>Usually curious</span>
+        <span style={{padding:"9px 16px",borderRadius:999,fontSize:13,fontWeight:500,background:c.sg+"25",color:"#6B8B6B"}}>Prefers evenings</span>
+        <span style={{padding:"9px 16px",borderRadius:999,fontSize:13,fontWeight:500,background:c.lg+"25",color:c.lg}}>Small groups</span>
       </div>
     </div>
     {/* Invite friends */}
@@ -711,7 +711,7 @@ function Journey({nav,matched,joined,setJ}){
         <h1 style={{fontFamily:sf,fontSize:34,fontWeight:400,color:c.dw}}>Journey</h1>
       </div>
       {/* Active circle card */}
-      <div style={{background:"#F2EBE3",borderRadius:22,padding:"20px 18px",marginBottom:14}}>
+      <div style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:22,padding:"20px 18px",marginBottom:14}}>
         <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:14}}>
           <span style={{padding:"4px 10px",borderRadius:999,fontSize:11,fontWeight:600,background:c.sg+"20",color:"#6B8B6B"}}>Confirmed</span>
           <span style={{padding:"4px 10px",borderRadius:999,fontSize:11,fontWeight:600,background:c.co+"15",color:c.co}}>Tomorrow</span>
@@ -752,7 +752,7 @@ function Journey({nav,matched,joined,setJ}){
           {past.length>3&&<span onClick={()=>nav(S.HISTORY)} style={{fontSize:11,fontWeight:600,color:c.co,cursor:"pointer"}}>View all {past.length} →</span>}
         </div>
         {inline.map((x,i)=>(
-          <div key={i} onClick={()=>nav(S.CHAT)} style={{background:"#F2EBE3",borderRadius:18,padding:"16px 16px",marginBottom:10,cursor:"pointer"}}>
+          <div key={i} onClick={()=>nav(S.CHAT)} style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:18,padding:"16px 16px",marginBottom:10,cursor:"pointer"}}>
             <div style={{display:"flex",alignItems:"center",gap:12}}>
               <span style={{fontSize:22}}>{x.e}</span>
               <div style={{flex:1}}>
@@ -776,7 +776,7 @@ function Journey({nav,matched,joined,setJ}){
       <div style={{marginTop:8}}>
         <p style={{fontSize:11,fontWeight:500,letterSpacing:"0.08em",textTransform:"uppercase",color:c.ss,marginBottom:12}}>Also suggested</p>
         {[{e:"☕",t:"Espresso & Deep Talk",v:"Sightglass Coffee · Friday, 6 PM",m:91},{e:"🧗",t:"Bouldering + Brews",v:"Movement SF · Saturday, 2 PM",m:88}].map((x,i)=>(
-          <div key={i} style={{background:"#F2EBE3",borderRadius:18,padding:"16px 16px",marginBottom:10,opacity:0.6}}>
+          <div key={i} style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:18,padding:"16px 16px",marginBottom:10,opacity:0.6}}>
             <div style={{display:"flex",alignItems:"center",gap:12}}>
               <span style={{fontSize:22}}>{x.e}</span>
               <div style={{flex:1}}>
@@ -860,7 +860,7 @@ function History({nav}){
       <h1 style={{fontFamily:sf,fontSize:32,fontWeight:400,color:c.dw,marginBottom:6}}>Past circles</h1>
       <p style={{fontSize:14,color:c.ss,marginBottom:24}}>Every circle Co built for you. Chats stay open.</p>
       {PAST_CIRCLES.map((x,i)=>(
-        <div key={i} onClick={()=>nav(S.CHAT)} style={{background:"#F2EBE3",borderRadius:18,padding:"16px 16px",marginBottom:10,cursor:"pointer"}}>
+        <div key={i} onClick={()=>nav(S.CHAT)} style={{background:"#F2EBE3",border:"1px solid #E8E0D6",borderRadius:18,padding:"16px 16px",marginBottom:10,cursor:"pointer"}}>
           <div style={{display:"flex",alignItems:"center",gap:12}}>
             <span style={{fontSize:22}}>{x.e}</span>
             <div style={{flex:1}}>
@@ -930,7 +930,7 @@ export default function App(){
   const full=[S.VOICE,S.MATCH,S.OB1,S.OB5,S.CHAT];
 
   return (
-    <div style={{width:"100%",height:"100vh",display:"flex",alignItems:"center",justifyContent:"center",background:"#1a1816",fontFamily:"'DM Sans',-apple-system,sans-serif",color:c.dw}}>
+    <div style={{width:"100%",height:"100vh",display:"flex",alignItems:"center",justifyContent:"center",background:"#C7BFB2",fontFamily:"'DM Sans',-apple-system,sans-serif",color:c.dw}}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap');
         @keyframes p1{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.04);opacity:1}}
@@ -946,7 +946,7 @@ export default function App(){
         ::-webkit-scrollbar{display:none}
         input:focus{border-color:${c.co}!important}
       `}</style>
-      <div style={{width:393,height:852,borderRadius:48,overflow:"hidden",position:"relative",background:c.iv,boxShadow:"0 0 0 1px rgba(46,42,38,.08),0 24px 80px rgba(0,0,0,.35)",flexShrink:0}}>
+      <div style={{width:393,height:852,borderRadius:48,overflow:"hidden",position:"relative",background:c.iv,flexShrink:0}}>
         <SBar/>
         <div ref={ref} style={{position:"absolute",inset:0,overflowY:full.includes(scr)?"hidden":"auto",overflowX:"hidden",background:`linear-gradient(180deg,${c.iv},${c.po})`,scrollbarWidth:"none"}}>
           {scr===S.OB1&&<Ob1 nav={nav}/>}
