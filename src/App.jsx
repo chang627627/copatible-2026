@@ -49,7 +49,7 @@ function Tl({s,st,sf}){const rv=sf==="rv",fg=rv?k.rvFg:k.ink,d=sf==="co"?k.coDsh
 function Sg({s,st,v,sf}){const rv=sf==="rv",g=sf==="co"?k.coG2:rv?k.rvG2:k.g2;return(<span style={{display:"inline-flex",alignItems:"center",gap:7,font:"400 14px/1.2 "+NR,color:st==="off"?g:rv?k.rvFg:k.ink}}><Tl s={s} st={st} sf={sf}/>{st==="off"?"—":st==="un"?(v||"")+"?":v}</span>)}
 function Bd({s,mt,fn,children}){return(<div onClick={fn} style={{margin:`${mt||0}px -20px 0`,padding:"14px 20px 16px",background:bgOf(s),borderTop:"1px solid "+k.ink,borderBottom:"1px solid "+k.ink,cursor:fn?"pointer":"default"}}>{children}</div>)}
 function Lb({l,out}){return(<span style={{flexShrink:0,alignSelf:"flex-start",font:"500 10px/1 "+MN,letterSpacing:".06em",textTransform:"uppercase",padding:"4px 6px",background:out?"transparent":k.ink,color:out?k.ink:k.pp,border:"1px solid "+k.ink,whiteSpace:"nowrap"}}>{l}</span>)}
-function Tk({d,n,h,t,m,lb,lbo,bg,fn,lg}){const w=lg?84:72,nt={position:"absolute",left:w-10,width:18,height:18,borderRadius:"50%",background:bg||k.pp,border:"1px solid "+k.ink},gp={position:"absolute",left:w-8,width:14,height:4,background:bg||k.pp};return(<div onClick={fn} style={{position:"relative",display:"flex",background:k.pp,border:"1px solid "+k.ink,cursor:fn?"pointer":"default"}}>
+function Tk({d,n,h,t,m,lb,lbo,bg,fn,lg}){const w=lg?84:72,nt={position:"absolute",left:w-10,width:18,height:18,borderRadius:"50%",background:bg||k.pp,border:"1px solid "+k.ink},gp={position:"absolute",left:w-9,width:16,height:2.5,background:bg||k.pp};return(<div onClick={fn} style={{position:"relative",display:"flex",background:k.pp,border:"1px solid "+k.ink,cursor:fn?"pointer":"default"}}>
   <div style={{width:w,flexShrink:0,padding:"10px 0",textAlign:"center",borderRight:"1.5px dashed "+k.ink}}>
     <p style={{font:"400 10px/1.3 "+MN,letterSpacing:".06em",color:k.g2}}>{d}</p>
     <p style={{font:`600 ${lg?34:28}px/1 ${NR}`,color:k.ink,margin:"2px 0"}}>{n}</p>
@@ -62,10 +62,10 @@ function Tk({d,n,h,t,m,lb,lbo,bg,fn,lg}){const w=lg?84:72,nt={position:"absolute
       {lb&&<span style={{alignSelf:"flex-end"}}><Lb l={lb} out={lbo}/></span>}
     </div>
   </div>
-  <span style={{...nt,top:-10,clipPath:"inset(50% 0 0 0)"}}/>
-  <span style={{...nt,bottom:-10,clipPath:"inset(0 0 50% 0)"}}/>
-  <span style={{...gp,top:-2.5}}/>
-  <span style={{...gp,bottom:-2.5}}/>
+  <span style={{...nt,top:-9.5,clipPath:"inset(50% 0 0 0)"}}/>
+  <span style={{...nt,bottom:-9.5,clipPath:"inset(0 0 50% 0)"}}/>
+  <span style={{...gp,top:-2}}/>
+  <span style={{...gp,bottom:-2}}/>
 </div>)}
 function Emp({t,m,mt}){return(<div style={{display:"flex",border:"1.5px dashed "+k.ink,marginTop:mt||0}}>
   <div style={{width:72,flexShrink:0,padding:"10px 0",textAlign:"center",borderRight:"1.5px dashed "+k.ink,color:k.g2}}><p style={{font:"400 10px/1.3 "+MN,letterSpacing:".06em"}}>DAY</p><p style={{font:`600 28px/1 ${NR}`,margin:"2px 0"}}>—</p><p style={{font:"400 10px/1.3 "+MN}}>TIME</p></div>
@@ -97,8 +97,8 @@ function Tabs({act,nav}){
     {t.map((x,i)=>{const on=a===x.id;return(<button key={x.id} onClick={()=>nav(x.id)} aria-current={on?"page":undefined} style={{position:"relative",flex:1,minWidth:0,display:"flex",flexDirection:"column",alignItems:"flex-start",padding:"9px 12px",backgroundColor:on?k.tbBg:"transparent",backgroundClip:"padding-box",border:"none",borderLeft:i?"1.5px dashed "+k.ink:"none",borderRadius:0,textAlign:"left",cursor:"pointer",transition:"background .2s"}}>
       <span style={{font:"400 10px/13px "+MN,letterSpacing:".04em",color:on?k.tbN:k.g2}}>{"0"+(i+1)}</span>
       <span style={{font:`600 15px/18px ${NR}`,color:on?k.tbFg:k.ink,marginTop:2,whiteSpace:"nowrap"}}>{x.l}</span>
-      {i>0&&<span aria-hidden="true" style={{position:"absolute",left:-7,top:-7,width:12,height:12,borderRadius:"50%",background:k.pp,border:"1px solid "+k.ink,clipPath:"inset(50% 0 0 0)"}}/>}
-      {i>0&&<span aria-hidden="true" style={{position:"absolute",left:-5,top:-2.5,width:8,height:4,background:k.pp}}/>}
+      {i>0&&<span aria-hidden="true" style={{position:"absolute",left:-7,top:-6.5,width:12,height:12,borderRadius:"50%",background:k.pp,border:"1px solid "+k.ink,clipPath:"inset(50% 0 0 0)"}}/>}
+      {i>0&&<span aria-hidden="true" style={{position:"absolute",left:-6,top:-2,width:10,height:2.5,background:k.pp}}/>}
     </button>)})}
   </div></div>);
 }
